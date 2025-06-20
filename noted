@@ -1,0 +1,9 @@
+export JAVA_HOME=/Users/chiwakantawong/Library/Java/JavaVirtualMachines/ms-17.0.15/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+docker compose build --no-cache
+docker compose up -d
+
+Config
+HOST_MOUNT_PATH=./configserver-service/config-repo docker compose up -d --build
