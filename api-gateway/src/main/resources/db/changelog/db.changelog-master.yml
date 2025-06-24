@@ -1,0 +1,54 @@
+databaseChangeLog:
+- changeSet:
+id: 4
+author: zengcode
+changes:
+- createTable:
+tableName: user_role_allowed
+columns:
+- column:
+name: id
+type: INT
+constraints:
+primaryKey: true
+- column:
+name: role
+type: VARCHAR(50)
+- column:
+name: api_path
+type: VARCHAR(100)
+- column:
+name: method
+type: VARCHAR(10)
+
+- insert:
+tableName: user_role_allowed
+columns:
+- column:
+name: id
+valueNumeric: 1
+- column:
+name: role
+value: ROLE_ADMIN
+- column:
+name: api_path
+value: /api/order/**
+- column:
+name: method
+value: GET
+
+- insert:
+tableName: user_role_allowed
+columns:
+- column:
+name: id
+valueNumeric: 2
+- column:
+name: role
+value: ROLE_USER
+- column:
+name: api_path
+value: /api/product/**
+- column:
+name: method
+value: GET
